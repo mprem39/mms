@@ -1,0 +1,44 @@
+[
+  {
+    "Id": 1,
+    "Point": 10,
+    "Dop": "2019-01-06T17:16:40",
+    "MemberId": 2,
+    "TeamLeadId": 1
+  },
+  {
+    "Id": 2,
+    "Point": 10,
+    "Dop": "2019-01-10T17:16:40",
+    "MemberId": 2,
+    "TeamLeadId": 1
+  },
+  {
+    "Id": 3,
+    "Point": 100,
+    "Dop": "2019-01-07T17:16:40",
+    "MemberId": 3,
+    "TeamLeadId": 1
+  },
+  {
+    "Id": 4,
+    "Point": 50,
+    "Dop": "2019-01-08T17:16:40",
+    "MemberId": 6,
+    "TeamLeadId": 1
+  },
+  {
+    "Id": 5,
+    "Point": 10,
+    "Dop": "2019-01-08T17:16:40",
+    "MemberId": 4,
+    "TeamLeadId": 2
+  },
+  {
+    "Id": 6,
+    "Point": 60,
+    "Dop": "2019-01-07T17:16:40",
+    "MemberId": 5,
+    "TeamLeadId": 2
+  }
+]
