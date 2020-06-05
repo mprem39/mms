@@ -1,0 +1,19 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">Add points for {{member.name}}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+     <form #pointsForm="ngForm" id="pointsForm">
+         <input type="text" 
+          class="form-control"
+          placeholder="Add poins here"
+          #point
+          >
+     </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">Cancel</button>
+    <button type="button" class="btn btn-success" (click)="savePoint()" form="pointsForm">Submit</button>
+  </div>

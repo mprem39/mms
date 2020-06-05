@@ -1,0 +1,31 @@
+<div class="container mt-5">
+ <h2 class="text-left text-primary">Manage</h2>    
+<div class="row">
+    <table class="table">
+        <tr>
+            <th style="width: 11.11%">Member ID</th>
+            <th style="width: 11.11%">Member Name</th>
+            <th style="width: 11.11%">Team Lead ID</th>
+            <th style="width: 11.11%">Team Lead Name</th>
+            <th style="width: 11.11%">Joining Date</th>
+            <th style="width: 11.11%">Address</th>
+            <th style="width: 11.11%"></th>
+            <th style="width: 11.11%"></th>
+            <th style="width: 11.11%"></th>
+
+        </tr>
+        <tr *ngFor="let member of members" >
+            <td>{{member.id}}</td>
+            <td>{{member.name}}</td>
+            <td>{{member.teamLeadId}}</td>
+            <td>{{member.teamLeadName}}</td>
+            <td>{{member.doj}}</td>
+            <td>{{member.address}}</td>
+
+            <td><button class="btn btn-info" (click)="mangePointsModal(member)">Add Points</button></td>
+            <td><button class="btn btn-info" (click)="viewPointsModal(member)">View Points</button></td>
+            <td><button class="btn btn-danger" >Remove Member</button></td>
+        </tr>
+    </table>
+</div>
+</div>

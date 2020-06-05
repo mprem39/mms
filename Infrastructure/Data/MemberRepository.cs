@@ -1,8 +1,10 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Core.Entities;
 using Core.Interfaces;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Data
@@ -38,9 +40,30 @@ namespace Infrastructure.Data
             return  _context.Members.ToList();
         }
 
-        public int GetMemberTeamPoints(int id)
+        [System.Obsolete]
+        public int GetMemberTeamPoints(int memberid,int TeamLeadId)
         {
-           return _context.Points.Where(x=>x.TeamLeadId==id).Sum(s => s.point);
+            var param = new SqlParameter[] {
+                        new SqlParameter() {
+                            ParameterName = "@MemberId",
+                            SqlDbType =  System.Data.SqlDbType.Int,
+                            Direction = System.Data.ParameterDirection.Input,
+                            Value =memberid
+                        },
+                          new SqlParameter() {
+                            ParameterName = "@TeamLeadId",
+                            SqlDbType =  System.Data.SqlDbType.Int,
+                            Direction = System.Data.ParameterDirection.Input,
+                            Value =TeamLeadId
+                        },
+                        new SqlParameter() {
+                            ParameterName = "@TeamPoints",
+                            SqlDbType =  System.Data.SqlDbType.Int,
+                            Direction = System.Data.ParameterDirection.Output,
+                        }};
+        int affectedRows=_context.Database.ExecuteSqlCommand("[dbo].[Sp_getTotalPoints] @MemberId,@TeamLeadId, @TeamPoints out", param);
+        int teamPoints = Convert.ToInt32(param[2].Value); 
+        return teamPoints;
         }
 
     }

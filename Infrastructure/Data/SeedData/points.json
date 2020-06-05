@@ -1,44 +1,20 @@
 [
   {
-    "Id": 1,
-    "Point": 10,
-    "Dop": "2019-01-06T17:16:40",
-    "MemberId": 2,
-    "TeamLeadId": 1
+    "point": 100,
+    "Dop": "2020-06-04",
+    "MemberId": 8504575,
+    "TeamLeadId": 3456789
   },
   {
-    "Id": 2,
-    "Point": 10,
-    "Dop": "2019-01-10T17:16:40",
-    "MemberId": 2,
-    "TeamLeadId": 1
+    "point": 150,
+    "Dop": "2020-06-04",
+    "MemberId": 8743026,
+    "TeamLeadId": 8504575
   },
   {
-    "Id": 3,
-    "Point": 100,
-    "Dop": "2019-01-07T17:16:40",
-    "MemberId": 3,
-    "TeamLeadId": 1
-  },
-  {
-    "Id": 4,
-    "Point": 50,
-    "Dop": "2019-01-08T17:16:40",
-    "MemberId": 6,
-    "TeamLeadId": 1
-  },
-  {
-    "Id": 5,
-    "Point": 10,
-    "Dop": "2019-01-08T17:16:40",
-    "MemberId": 4,
-    "TeamLeadId": 2
-  },
-  {
-    "Id": 6,
-    "Point": 60,
-    "Dop": "2019-01-07T17:16:40",
-    "MemberId": 5,
-    "TeamLeadId": 2
+    "point": 75,
+    "Dop": "2020-06-04",
+    "MemberId": 8915093,
+    "TeamLeadId": 8743026
   }
 ]

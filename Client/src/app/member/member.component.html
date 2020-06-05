@@ -1,0 +1,83 @@
+<div class="container mt-5">
+<form [formGroup]="memberForm" (ngSubmit)="AddMember()">
+    <h2 class="text-center text-primary">Add Member</h2>
+    <hr />
+     <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        formControlName="id"
+        placeholder="Member Id"
+      />
+      <div class="invalid-feedback">Please enter member Id</div>
+    </div>
+  
+    <div class="form-group">
+      <input
+      type="text"
+       class="form-control"
+        placeholder="Name"
+        formControlName="name"
+      />
+      <div  class="invalid-feedback" > Name is required  </div>
+    </div>
+    <div class="form-group">
+        <input
+          type="text"
+           class="form-control"
+          formControlName="teamLeadId"
+          placeholder="Team Lead Id"
+        />
+        <div class="invalid-feedback">Please enter Lead Id</div>
+      </div>
+    
+      <div class="form-group">
+        <input
+        type="text"
+         class="form-control"
+          placeholder="Team Lead Name"
+          formControlName="teamLeadName"
+        />
+        <div  class="invalid-feedback" > Name is required  </div>
+      </div>
+
+    <div class="form-group">
+      <input
+        class="form-control"
+        placeholder="Date of Join"
+        formControlName="doj"
+        type="text"
+        bsDatepicker
+        [bsConfig]="bsConfig"
+      />
+      <div
+        class="invalid-feedback"
+        >
+        Date of Join is required
+      </div>
+    </div>
+  
+    <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="address"
+          placeholder="Address"
+        />
+        <div class="invalid-feedback">Please enter Lead Id</div>
+      </div>
+  
+    <div class="form-group text-center">
+      <button
+        class="btn btn-success"
+      
+        type="submit"
+      >
+       Save      </button>
+      <button class="btn btn-default" type="button" (click)="cancel()" >
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>
+  

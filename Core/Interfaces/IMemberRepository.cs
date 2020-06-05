@@ -11,7 +11,7 @@ namespace Core.Interfaces
         Task<bool> SaveAll();
         IList<Member> GetMembers();
         int GetMemberIndividualPoints(int id);
-        int GetMemberTeamPoints(int id);
+        int GetMemberTeamPoints(int mid,int tid);
 
     }
 }

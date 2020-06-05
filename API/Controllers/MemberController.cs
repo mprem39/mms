@@ -19,20 +19,26 @@ namespace API.Controllers
             _repo = repo;
         }
 
-        [HttpGet("GetPointsdetails")]
+        [HttpGet("getpointdetails")]
         public  IActionResult GetPointsdetails([FromQuery]MemberParams memberParams)
         {
             var ownpoints = _repo.GetMemberIndividualPoints(memberParams.MemberId);
-            var teamPoints= _repo.GetMemberTeamPoints(memberParams.TeamLeadId);
-            var totalPoints=ownpoints+teamPoints;
+            var teamPoints= _repo.GetMemberTeamPoints(memberParams.MemberId,memberParams.TeamLeadId);
             PointsToReturnDto pointsToReturnDto=new PointsToReturnDto();
              pointsToReturnDto.IndividualPoints=ownpoints;
              pointsToReturnDto.TeamPoints=teamPoints;
-             pointsToReturnDto.TotalPoints=totalPoints;
-            if (pointsToReturnDto == null) return NotFound();
+             if (pointsToReturnDto == null) return NotFound();
             return Ok(pointsToReturnDto);
         }
 
+        [HttpGet("getallmembers")]
+        public  IActionResult GetMembers()
+        {
+            var members=_repo.GetMembers();
+            if (members == null) return NotFound();
+            return Ok(members);
+        }
+        
        
        [HttpPost("addmember")]
         public async Task<IActionResult> AddMember([FromBody]Member member)
@@ -41,7 +47,7 @@ namespace API.Controllers
 
              if (await _repo.SaveAll())
                 return NoContent();
-            throw new Exception("Creating the message failed on save");
+            throw new Exception("Creating the member failed on save");
            
         }
 
@@ -52,7 +58,7 @@ namespace API.Controllers
 
              if (await _repo.SaveAll())
                 return NoContent();
-            throw new Exception("Creating the message failed on save");
+            throw new Exception("Creating the point failed on save");
            
         }
 

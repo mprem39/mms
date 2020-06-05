@@ -12,10 +12,10 @@ namespace Infrastructure.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", false),
-                    Name = table.Column<string>(nullable: false),
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(nullable: true),
                     TeamLeadId = table.Column<int>(nullable: false),
-                    TeamLeadName = table.Column<string>(nullable: false),
+                    TeamLeadName = table.Column<string>(nullable: true),
                     Doj = table.Column<DateTime>(nullable: false),
                     Address = table.Column<string>(nullable: true)
                 },
@@ -29,7 +29,7 @@ namespace Infrastructure.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     point = table.Column<int>(nullable: false),
                     Dop = table.Column<DateTime>(nullable: false),
                     MemberId = table.Column<int>(nullable: false),
